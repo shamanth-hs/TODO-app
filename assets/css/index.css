@@ -1,0 +1,78 @@
+/* Body styles */
+body{
+    background-color: gray;
+}
+.main-container{
+    margin:0px 25% 25% 25%;
+    background-color: white;
+}
+
+/* For TODO title */
+.title-box{
+    min-height: 50px;
+    justify-content: center;
+    display: flex;
+    font-family: sans-serif;
+}
+/* For divisions in app */
+.entries{
+    padding-left: 10px;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid gray;
+}
+.two-entries{
+    padding-left: 10px;
+    display: inline-flex;
+    width: 100%;
+    border: 1px solid gray;
+}
+
+.two-entries div{
+    display: inline;
+    min-width: 200px;
+    padding-left: 10px;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+/* No border input types */
+input[type="text"],input[type="date"],select{
+    width: 75%;
+    border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+    outline: none;
+    padding-bottom: 10px;
+}
+
+button{
+    margin: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 20%;
+    height: 5%;
+    color: white;
+}
+i{
+    padding-right: 10px;
+}
+
+/* Styles for contents */
+.content-data{
+    padding-left: 10px;
+    display: inline-flex;
+    width: 100%;
+    border: 1px solid gray;
+    align-items: center;
+    height: fit-content;
+}
+.content-data div{
+    margin: 20px;
+    width: 40%;
+}
+
+pre{
+    max-height: 200px;
+}

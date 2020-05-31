@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/index.css">
+    <title><%= title%></title>
+    <script src="https://kit.fontawesome.com/d04f3c9245.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+        <div class="main-container">
+            <div class="title-box">
+                <h1>TODO App</h1>
+            </div>
+            <form action="add-todo" method="post" name="add-todo-form">
+                <div class="entries">
+                    <h3>Description</h3>
+                    <input type="text" name="description" placeholder="enter description" id="">
+                </div>
+                <div class="two-entries">
+                    <div>
+                        <h3>Category</h3>
+                        <select name="category" id="">
+                            <option value="select" selected>Select</option>
+                            <% for (let option of options){%>
+                            <option value=<%= option %>> <%= option %> </option>
+                            <%}%>
+                        </select>
+                    </div>
+                    <div>
+                        <h3>due date</h3>
+                        <input type="date" name="dateof" id="">
+                    </div>
+                </div>
+                <div class="entries" style="padding-left: 25%">
+                    <button type="submit" style="background-color: gray; " id="add-todo" onclick="return validForm()">
+                        <i class="fas fa-plus" style="color: azure;"></i>ADD
+                    </button>
+                    <button type="submit" formaction="delete-todos" style="background-color: red;" onclick="return checkBoxValidation()">
+                        <i class="fas fa-trash-alt" style="color: azure;" ></i>Delete
+                    </button>
+                </div>
+                <div>
+                <div  >
+                    
+                    <% for(let i of content){%>
+                            <div class="content-data">
+                                <div style="display: inline;">
+                                    <input type="checkbox" name="checkbox_todo" id="" value=<%= i._id %>>
+                                </div>
+                                <div style="display: inline; width: 300px;align-content: flex-start;">
+                                    <p style="text-decoration: black;text-transform: capitalize;padding-left: 10px;">
+                                        <%= i.description%></br>
+                                        <span><i class="fas fa-calendar-week"></i><%= i.dateof%></span>
+                                    </p>
+
+                                </div>
+                                <div style="display: inline;">
+                                    <div class="option-type" style="padding-left: 20%;height: 20px;color: white;">
+                                        <%= i.category%>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <%}%>
+                </div>
+            </div>
+            </form>
+            
+        </div>
+    </main>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>
